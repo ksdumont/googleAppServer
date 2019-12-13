@@ -28,13 +28,11 @@ app.get('/apps', (req, res) => {
     
         if (sort) {
             results.sort((a, b) => {
-                return a[sort.rating] > b[sort.rating] ? 1 : a[sort.rating] < b[sort.rating] ? -1 : 0;
+                return a[sort] > b[sort] ? 1 : a[sort] < b[sort] ? -1 : 0;
             });
         }         
         res.json(results);    
 });
-app.listen(8000, () => {
-    console.log('Server started on port 8000');
-});
+module.exports = app;
 
 
